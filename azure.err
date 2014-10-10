@@ -1,0 +1,14 @@
+Thu Oct 09 2014 16:02:22 GMT-0700 (PDT):
+[Error: Application setting with key "NODE_ENV" already exists]
+Error: Application setting with key "NODE_ENV" already exists
+    at ___ (/Users/student/.nvm/v0.10.26/lib/node_modules/azure-cli/lib/commands/asm/site.appsetting._js:84:28)
+    at ___ (/Users/student/.nvm/v0.10.26/lib/node_modules/azure-cli/node_modules/streamline/lib/callbacks/runtime.js:85:13)
+    at /Users/student/.nvm/v0.10.26/lib/node_modules/azure-cli/lib/commands/asm/websites/websitesclient._js:572:14
+    at /Users/student/.nvm/v0.10.26/lib/node_modules/azure-cli/node_modules/azure/node_modules/azure-mgmt-website/lib/webSiteManagementClient.js:3217:16
+    at Parser.<anonymous> (/Users/student/.nvm/v0.10.26/lib/node_modules/azure-cli/node_modules/azure-common/node_modules/xml2js/lib/xml2js.js:246:20)
+    at Parser.EventEmitter.emit (events.js:95:17)
+    at Object.saxParser.onclosetag (/Users/student/.nvm/v0.10.26/lib/node_modules/azure-cli/node_modules/azure-common/node_modules/xml2js/lib/xml2js.js:225:24)
+    at emit (/Users/student/.nvm/v0.10.26/lib/node_modules/azure-cli/node_modules/azure-common/node_modules/xml2js/node_modules/sax/lib/sax.js:589:33)
+    at emitNode (/Users/student/.nvm/v0.10.26/lib/node_modules/azure-cli/node_modules/azure-common/node_modules/xml2js/node_modules/sax/lib/sax.js:594:3)
+    at closeTag (/Users/student/.nvm/v0.10.26/lib/node_modules/azure-cli/node_modules/azure-common/node_modules/xml2js/node_modules/sax/lib/sax.js:834:5)
+    at Object.write (/Users/student/.nvm/v0.10.26/lib/node_modules/azure-cli/node_modules/azure-common/node_modules/xml2js/node_modules/sax/lib/sax.js:1253:29)
