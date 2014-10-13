@@ -26,22 +26,22 @@ module.exports = function(grunt) {
       }
     },
 
-    uglify: {
-      build: {
-        src: 'public/dist/production.js',
-        dest: 'public/dist/production.min.js'
+    uglify: { //minifies the jsavascript
+      build: {  //you want to build these files
+        src: 'public/dist/production.js', //this is the source
+        dest: 'public/dist/production.min.js' //and the destination
       }
     },
 
-    jshint: {
+    jshint: {  //this file lints the file
       files: [
-        'public/client/*.js'
+        'public/client/*.js'  //lints all the files in the directory the * just means any file with .js
       ],
       options: {
         force: 'true',
         jshintrc: '.jshintrc',
         ignores: [
-          'public/lib/**/*.js',
+          'public/lib/**/*.js', // ** means any folders
           'public/dist/**/*.js'
         ]
       }
@@ -50,13 +50,13 @@ module.exports = function(grunt) {
     cssmin: {
     },
 
-    watch: {
+    watch: {   //this allows grunt to automatically update the following files in order to do the tasks
       scripts: {
         files: [
           'public/client/**/*.js',
           'public/lib/**/*.js',
         ],
-        tasks: [
+        tasks: [  //this is what you want grunt to watch so that you can do these tasks to them
           'concat',
           'uglify'
         ]
@@ -68,8 +68,8 @@ module.exports = function(grunt) {
     },
 
     shell: {
-      prodServer: {
-        command: 'git push azure master'
+      prodServer: {   //this will produce the server
+        command: 'git push azure master'  //since we setup azure to automatically update once you push to the azure remote
       }
     },
   });
@@ -104,19 +104,19 @@ module.exports = function(grunt) {
     'mochaTest'
   ]);
 
-  grunt.registerTask('build', [
-    'mochaTest', 'concat', 'uglify', 'jshint', 'server-dev'
+  grunt.registerTask('build', [   //if you call 'grunt build', you will do the tasks listed below
+    'mochaTest', 'concat', 'uglify', 'jshint', 'server-dev' //notice it starts the server here, instead of starting azure
   ]);
 
   grunt.registerTask('upload', function() {
-    if(grunt.option('prod')) {
+    if(grunt.option('prod')) {    
       grunt.task.run(['shell']);
     } else {
       grunt.task.run([ 'server-dev' ]);
     }
   });
 
-  grunt.registerTask('deploy', [
+  grunt.registerTask('deploy', [  //this has the shell task, which will push the changes to azure
     'mochaTest', 'concat', 'uglify', 'jshint', 'shell'
   ]);
 

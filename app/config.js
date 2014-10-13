@@ -1,13 +1,13 @@
 var mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost/test');
+mongoose.connect('mongodb://localhost/test');		//connects mongoose to the test directory of mongodb
 
-var cb = mongoose.connection;
+var db = mongoose.connection;	//assigns db to mongoose connection
 
-cb.once('open', function(){
+db.once('open', function(){		//if connection is open, you will console log this message
   console.log('WORKING DB');
 });
 
-cb.on('error', function(err){
+db.on('error', function(err){	//if connection gets an error, this console will start
   console.log('error on the connection', err);
 });
